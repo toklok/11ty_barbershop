@@ -21,8 +21,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - uses: actions/checkout@master
       - name: Build
-        uses: TartanLlama/actions-eleventy@v1.1
+        uses: TartanLlama/actions-eleventy@master
         with:
+          args: --output _dist
           install_dependencies: true
       - name: Publish
         uses: cloudflare/wrangler-action@1.1.0
