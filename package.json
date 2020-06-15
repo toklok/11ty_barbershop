@@ -3,8 +3,8 @@
   "description": "a starter template for my personal cleaners site",
   "version": "1.0.0",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "build": "./node_modules/.bin/eleventy",
+    "start": "./node_modules/.bin/eleventy --serve"
   },
   "tags": [
     "eleventy",
