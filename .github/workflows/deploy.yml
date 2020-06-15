@@ -19,13 +19,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install deps      
-      - run: npm install
       - uses: actions/checkout@master
-      - name: Build site
-        run: npm run build
+      - name: Build
+        uses: TartanLlama/actions-eleventy@v1.1
+        with:
+          install_dependencies: true
       - name: Publish
         uses: cloudflare/wrangler-action@1.1.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          publish_dir: ./dist
