@@ -23,7 +23,6 @@ jobs:
       - name: Build
         uses: TartanLlama/actions-eleventy@master
         with:
-          args: --output _dist
           install_dependencies: true
       - name: Publish
         uses: cloudflare/wrangler-action@1.1.0
