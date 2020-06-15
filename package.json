@@ -1,0 +1,22 @@
+{
+  "name": "eleventy-cleaners-site",
+  "description": "a starter template for my personal cleaners site",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "tags": [
+    "eleventy",
+    "11ty",
+    "ssr",
+    "static",
+    "amp"
+  ],
+  "author": "Joseph Curtis",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@ampproject/eleventy-plugin-amp": "^0.2.2"
+  }
+}

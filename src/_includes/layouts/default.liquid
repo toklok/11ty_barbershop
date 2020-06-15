@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+  <title>{{ title }}</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://conscientiouscleaning.services/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="description"
+    content="Conscientious cleaning service that doesn't dwell in the past, we are operating in the future!  We follow recommended CDC guidelines  that make it worth it">
+  <style amp-custom>
+    .wrapper {
+      --max: 1200px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    #my-accordion h2 {
+      background-color: #fff;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-bottom: 1px solid #333;
+    }
+
+    .accordion-header-indicator {
+      --w: 11px;
+      width: var(--w);
+      height: var(--w);
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      position: absolute;
+      top: calc(50% - var(--w) / 2);
+      right: 10px;
+      transition: .2s;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper ul {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 0;
+        list-style: none;
+        flex-wrap: wrap;
+      }
+
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    {{ content }}
+  </div>
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+  {
+    "vars": {
+      "account": "UA-53518718-2"
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+      },
+      "scrollPings": {
+        "on": "scroll",
+        "scrollSpec": {
+          "verticalBoundaries": [25, 50, 90],
+          "horizontalBoundaries": [90]
+        },
+        "request": "event",
+        "vars": {
+          "eventCategory": "AMP Scroll Depth",
+          "eventAction": "Scrolled",
+          "eventLabel": "Scrolled to ${verticalScrollBoundary}%"
+        }
+      }
+    }
+  }
+  </script>
+  </amp-analytics>
+</body>
+
+</html>
