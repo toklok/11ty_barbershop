@@ -30,21 +30,6 @@ providing service in south eastern massachusetts and rhode island
   <input type="submit" value="Book Appointment" />
 </form>
 
-<amp-carousel 
-  layout="responsive" 
-  width="1200" 
-  height="400" 
-  controls
-  data-next-button-aria-label="Go to next slide"
-  data-previous-button-aria-label="Go to previous slide"
-  type="slides">
-  <amp-img src="https://i.picsum.photos/id/164/1200/400.jpg" alt="an image" width="1200" height="400"></amp-img>
-  <amp-img src="https://i.picsum.photos/id/164/1200/400.jpg" alt="an image" width="1200" height="400"></amp-img>
-  <amp-img src="https://i.picsum.photos/id/164/1200/400.jpg" alt="an image" width="1200" height="400"></amp-img>
-  <amp-img src="https://i.picsum.photos/id/164/1200/400.jpg" alt="an image" width="1200" height="400"></amp-img>
-</amp-carousel>
-
-
 <amp-accordion id="my-accordion" disable-session-states>
   <section expanded>
     <h2>Why should I trust Joe?
