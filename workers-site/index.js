@@ -25,7 +25,7 @@ async function handlePostRequest(request) {
   };
 
   let hookResponse = await fetch(
-    'https://hooks.zapier.com/hooks/catch/5069656/osma176',
+    'https://maker.ifttt.com/trigger/pool_contact/with/key/m1xWNlbxAXrszXtpousLX',
     requestOptions
   );
 

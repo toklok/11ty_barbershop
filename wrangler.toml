@@ -1,10 +1,9 @@
-name = "11ty"
+name = "11ty_pool"
 type = "webpack"
 account_id = "889c69c3a2ed27db8cbfdc65709ba4dd"
-workers_dev = false
-route = "conscientiouscleaning.services/*"
+workers_dev = true
 zone_id = "ba70c7c3079e7d9380d195eb44a1315c"
 
 [site]
-bucket = "./dist"
+bucket = "./_site"
 entry-point = "workers-site"

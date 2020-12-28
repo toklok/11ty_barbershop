@@ -1,26 +1,238 @@
 <html lang="en">
-
 <head>
   <title>{{ title }}</title>
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://conscientiouscleaning.services/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width">
+  <link rel="canonical" href="{{ siteData.canonical }}" />
+  <link rel="icon" href="/favicon.ico">
   <meta name="description"
-    content="Conscientious cleaning service that doesn't dwell in the past, we are operating in the future!  We follow recommended CDC guidelines  that make it worth it">
+    content="{{ siteData.meta_description }}">
   <style amp-custom>
-    .wrapper {
-      --max: 1200px;
-      max-width: var(--max);
-      margin: 0 auto;
+    :root {
+      --brand-hue: 300;
+      --text: hsl(var(--brand-hue), 10%, 15%);
+      --surface: hsl(var(--brand-hue), 20%, 98%);
+      --surface2: hsl(var(--brand-hue), 20%, 30%);
+      --color-primary: #005AF0;
+      --color-secondary: #00DCC0;
+      --color-text-light: #fff;
+      --space-2: 1rem;   /* 16px */
+      --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --surface: hsl(var(--brand-hue), 20%, 8%);
+        --text: hsl(var(--brand-hue), 20%, 80%);
+      }
+    }
+    html {
+      block-size: 100%;
+      inline-size: 100%;
+    }
+    body {
+      min-block-size: 100%;
+      min-inline-size: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      padding-block: 10vmin;
+
+      align-content: center;
+      justify-content: center;
+      place-content: center;
+      grid-gap: 2ch;
+
+      display: grid;
+      place-content: center;
+      gap: 10vmin;
+
+      font-family: system-ui, sans-serif;
+      color: var(--text);
+      background-color: var(--surface);
+    }
+
+    h1 {
+      max-inline-size: 30ch;
+    }
+
+    p {
+      max-inline-size: 50ch;
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    h1,h2,h3,h4,h6,h6 {
+      margin: 0;
+    }
+
+    p,h1,h2,h3,h4,h5,h6,ul,ol,dl,figure,blockquote {
+      margin-block: 0;
+    }
+
+    section {
+      display: grid;
+      gap: 5vmin;
+    }
+
+    p,li,dd,dt {
+      max-inline-size: 50ch;
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    ol, ul {
+      display: grid;
+      gap: 1rem;
+    }
+
+    li, dd {
+      max-inline-size: 50%;
+    }
+
+    li {
+      font-size: 1.25rem;
+      max-inline-size: 40ch;
+    }
+
+    li::marker,dd::marker {
+      color: hsl(var(--brand), 50%, 50%);
+    }
+
+    .target {
+      position: relative;
+    }
+    .target-anchor {
+      position: absolute;
+      top: -72px;
+      left: 0;
+    }
+
+    :focus {
+      outline-offset: .75ch;
+      outline-color: var(--brand);
+    }
+
+    form { 
+      display: grid;
+      gap: 1.5em;
+      max-inline-size: 50ch;
+    }
+
+    form input {
+      font-size: 1em;
+      color: var(--text);
+      background-color: transparent;
+      padding: 0;
+      border: 0;
+      border-bottom: .25rem solid var(--surface2);
+      padding: 6px 20px 6px 6px;
+    }
+
+    [type="submit"] {
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      width: 100%;
+      background: var(--surface2);
+      border-radius:5px;
+      border:0;
+      cursor:pointer;
+      color:white;
+      font-size:24px;
+      padding-top:10px;
+      padding-bottom:10px;
+      transition: all 0.3s;
+      margin-top:-4px;
+      font-weight:700;
+    }
+
+    [type="submit"]:hover { 
+      background: var(--surface2); 
+    }
+
+    img {
+      max-inline-size: 100%;
+      block-size: auto;
+    }
+
+    small {
+      font-size: max(.5em, .8rem);
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1,h2,h3 {
+      font-weight: 100;
+      line-hight: 1.25;
+      letter-spacing: .05em;
+    }
+
+    h1 {
+      font-size: 4rem;
+      max-inline-size: 17ch;
+    }
+
+    h2 {
+      font-size: 3rem;
+      max-inline-size: 25ch;
+    }
+
+    h3 {
+      font-size: 2rem;
+      max-inline-size: 30ch;
+    }
+
+    h4 {
+      font-size: 1.75rem;
+      max-inline-size: 30ch;
+    }
+    h5 {
+      font-size: 1.5rem;
+      max-inline-size: 35ch;
+    }
+    h6 {
+      font-size: 1.25rem;
+      max-inline-size: 40ch;
+    }
+    ol,ul,dl {
+      display: grid;
+      gap: 1rem;
+    }
+
+    li, dd {
+      max-inline-size: 40ch;
+    
+      &::marker {
+        color: hsl(200 50% 50%);
+      }
+    }
+
+    dt {
+      font-weight: bolder;
+
+      &:not(:first-of-type) {
+        margin-top: 2ch;
+      }
+    }
+
+    #my-accordion ul {
+      display: grid;
+      gap: 1rem;
     }
 
     #my-accordion h2 {
-      background-color: #fff;
+      background-color: var(--brand);
       border-left: none;
       border-right: none;
       border-top: none;
       border-bottom: 1px solid #333;
+    }
+
+    #my-accordion h2 {
+      margin-block-end: 1em;
+      padding-block-end: 1em;
     }
 
     .accordion-header-indicator {
@@ -35,15 +247,48 @@
       transition: .2s;
     }
 
-    @media (max-width: 768px) {
-      .wrapper ul {
-        display: flex;
-        justify-content: space-around;
-        padding-left: 0;
-        list-style: none;
-        flex-wrap: wrap;
-      }
+    .scrollToTop {
+      color: var(--color-text-light);
+      font-size: 1.4em;
+      box-shadow: var(--box-shadow-1);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      background: var(--surface2);
+      z-index: 9999;
+      bottom: var(--space-2);
+      right: var(--space-2);
+      position: fixed;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .spacer {
+      width: 100vw;
+      max-width: 700px;
+      height: 200vh;
+      background-color: var(--color-secondary);
+    }
+    
+    /* we move the anchor down to componsate the fixed header */
+    .target {
+      position: relative;
+    }
+    .target-anchor {
+      position: absolute;
+      top: -72px;
+      left: 0;
+    }
 
+    .parallax-image-window {
+      overflow: hidden;
+    }
+    .parallax-image-window amp-img {
+      margin-bottom: -30%;
+    }
+
+    @media (max-width: 768px) {
       body {
         padding: 1rem;
       }
@@ -53,8 +298,9 @@
 
 <body>
   <div class="wrapper">
+  <main>
     {{ content }}
-  </div>
+  </main>
   <amp-analytics type="googleanalytics">
     <script type="application/json">
   {
@@ -84,5 +330,4 @@
   </script>
   </amp-analytics>
 </body>
-
 </html>
