@@ -1,8 +1,9 @@
-name = "11ty_pool"
+name = "11ty_barbershop"
 type = "webpack"
 account_id = "889c69c3a2ed27db8cbfdc65709ba4dd"
-workers_dev = true
-zone_id = "ba70c7c3079e7d9380d195eb44a1315c"
+workers_dev = false
+route = "stylebarbershop.info/*"
+zone_id = "a764a2d404ec87a0374fde5122e8ccb1"
 
 [site]
 bucket = "./_site"

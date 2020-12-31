@@ -25,7 +25,7 @@ async function handlePostRequest(request) {
   };
 
   let hookResponse = await fetch(
-    'https://maker.ifttt.com/trigger/pool_contact/with/key/m1xWNlbxAXrszXtpousLX',
+    FORM_ENDPOINT,
     requestOptions
   );
 
@@ -95,13 +95,16 @@ async function handleEvent(event) {
    * by configuring the function `mapRequestToAsset`
    */
   options.mapRequestToAsset = handlePrefix(/^\/docs/);
-
+  console.log(url.pathname);
   try {
     if (DEBUG) {
       // customize caching
       options.cacheControl = {
         bypassCache: true,
       };
+    }
+    if (url.pathname === '/') {
+      return Response.redirect(`${url}/en-US/`, 301)
     }
     if (url.pathname.endsWith('.html')) {
       options.cacheControl = {

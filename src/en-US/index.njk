@@ -1,0 +1,130 @@
+---
+layout: layouts/default.njk
+title: Barbershop located in Woonsocket, RI, 02895 | Style Barber shop
+translationKey: homepage
+permalink: en-US/
+lang: en
+---
+
+<amp-animation id="showAnim" layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "200ms",
+       "fill": "both",
+       "iterations": "1",
+       "direction": "alternate",
+       "animations": [
+         {
+           "selector": "#scrollToTopButton",
+           "keyframes": [
+             { "opacity": "1", "visibility": "visible" }
+           ]
+         }
+       ]
+    }
+  </script>
+</amp-animation>
+<amp-animation id="hideAnim" layout="nodisplay">
+  <script type="application/json">
+    {
+     "duration": "200ms",
+       "fill": "both",
+       "iterations": "1",
+       "direction": "alternate",
+       "animations": [
+         {
+           "selector": "#scrollToTopButton",
+           "keyframes": [
+             { "opacity": "0", "visibility": "hidden" }
+           ]
+         }
+       ]
+   }
+  </script>
+</amp-animation>
+
+<section>
+  <h1>
+    <a class="target-anchor" id="top"></a>
+    {{ siteData.name }}
+    <amp-position-observer on="enter:hideAnim.start; exit:showAnim.start" layout="nodisplay"></amp-position-observer>
+  </h1>
+
+  <section class="parallax-image-window">
+    <amp-animation id="parallaxTransition"
+      layout="nodisplay">
+      <script type="application/json">
+        {
+          "duration": "1",
+          "fill": "both",
+          "direction": "reverse",
+          "animations": [
+            {
+              "selector": "#parallaxImage",
+              "keyframes": [
+                { "transform": "translateY(-40%)" }
+              ]
+            }
+          ]
+        }
+      </script>
+    </amp-animation>
+    
+    <amp-position-observer on="scroll:parallaxTransition.seekTo(percent=event.percent)"
+      intersection-ratios="0"
+      layout="nodisplay">
+    </amp-position-observer>
+
+    <amp-img id="parallaxImage" data-hero src="img/stylebarbershop_storefront.webp" width="433" height="577" layout="responsive">
+      <amp-img alt="Style barbershop store front side of building"
+        fallback
+        width="433"
+        height="577"
+        layout="responsive"
+        src="img/stylebarbershop_storefront.jpg"></amp-img>
+    </amp-img>
+  </section>
+
+  <p>{{ 'description' | i18n }}</p>
+
+  <h3>{{ 'business_hours' | i18n }}</h3>
+
+  <ul>
+    <li>Monday - Closed</li>
+    <li>Tuesday - 9:00AM to 7:00PM</li>
+    <li>Wednesday - 9:00AM to 7:00PM</li>
+    <li>Thursday - 9:00AM to 7:00PM</li>
+    <li>Friday - 9:00AM to 7:00PM</li>
+    <li>Saturday - 9:00AM to 5:00PM</li>
+    <li>Sunday - Closed</li>
+  </ul>
+
+  <h4>Style Barber shop is located at 697 Wood Ave, Woonsocket, RI 02895</h4>
+
+  <amp-iframe 
+    width="600"
+    height="400"
+    title="Style Barber shop map pin, Woonsocket, RI"
+    layout="responsive"
+    sandbox="allow-scripts allow-same-origin allow-popups"
+    frameborder="0"
+    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXbga9Mhr5IkRf578ybnCIP0&key=AIzaSyBTuZkM6bF1MfAswPQ1PMQqx0KE810yTtg">
+  </amp-iframe>
+
+  <p [text]="'Thanks, ' + individual +'! You have successfully contacted us.'">
+    Contact us
+  </p>
+  <form method="post" action-xhr="/"  on="submit-success: AMP.setState({ 'individual': event.response.name })" target="_blank">
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="tel" name="number" placeholder="Phone Number" required />
+    <input type="text" name="message" placeholder="How can we help you?" />
+    <input type="submit" value="Contact Us" />
+  </form>
+</section>
+<div>
+  <button id="scrollToTopButton"
+    on="tap:top.scrollTo(duration=200)"
+    class="scrollToTop">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.224 44.224"><path d="M22.112 44.224a3 3 0 003-3v-25.66c0-2.761 1.541-3.376 3.443-1.374l7.045 7.419a3.127 3.127 0 002.274.976 3.134 3.134 0 002.273-5.295L24.653.977A3.13 3.13 0 0022.406 0a3.161 3.161 0 00-2.261.938L4.114 17.254a3.135 3.135 0 104.47 4.394l7.024-7.148c1.935-1.97 3.504-1.328 3.504 1.433v25.291a3 3 0 003 3z" fill="#fff"/></svg>
+  </button>
+</div>

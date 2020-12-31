@@ -1,18 +1,18 @@
-<html lang="en">
+<html lang="{{ locale }}" dir="{{ dir }}">
 <head>
   <title>{{ title }}</title>
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width">
   <link rel="canonical" href="{{ siteData.canonical }}" />
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="img/barber-pole.png" sizes="16x16">
   <meta name="description"
     content="{{ siteData.meta_description }}">
   <style amp-custom>
     :root {
-      --brand-hue: 300;
+      --brand-hue: 210;
       --text: hsl(var(--brand-hue), 10%, 15%);
       --surface: hsl(var(--brand-hue), 20%, 98%);
-      --surface2: hsl(var(--brand-hue), 20%, 30%);
+      --surface2: hsl(var(--brand-hue), 10%, 15%);
       --color-primary: #005AF0;
       --color-secondary: #00DCC0;
       --color-text-light: #fff;
@@ -22,6 +22,7 @@
     @media (prefers-color-scheme: dark) {
       :root {
         --surface: hsl(var(--brand-hue), 20%, 8%);
+        --surface2: hsl(var(--brand-hue), 20%, 30%);
         --text: hsl(var(--brand-hue), 20%, 80%);
       }
     }
@@ -130,7 +131,6 @@
     }
 
     [type="submit"] {
-      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       width: 100%;
       background: var(--surface2);
       border-radius:5px;
@@ -163,7 +163,7 @@
       line-height: 1.25;
     }
 
-    h1,h2,h3 {
+    h1,h2,h3,h4,h5,h6 {
       font-weight: 100;
       line-hight: 1.25;
       letter-spacing: .05em;
@@ -285,7 +285,7 @@
       overflow: hidden;
     }
     .parallax-image-window amp-img {
-      margin-bottom: -30%;
+      margin-bottom: -40%;
     }
 
     @media (max-width: 768px) {
@@ -299,13 +299,13 @@
 <body>
   <div class="wrapper">
   <main>
-    {{ content }}
+    {{ content | safe}}
   </main>
   <amp-analytics type="googleanalytics">
     <script type="application/json">
   {
     "vars": {
-      "account": "UA-53518718-2"
+      "account": "UA-53518718-4"
     },
     "triggers": {
       "trackPageview": {
