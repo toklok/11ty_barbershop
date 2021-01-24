@@ -1,9 +1,8 @@
 ---
 layout: layouts/default.njk
-title: Barbershop located in Woonsocket, RI, 02895 | Style Barber shop
+title: Barber shop near me Woonsocket, Rhode Island, 02895 | Style Barber shop
 translationKey: homepage
 permalink: en-US/
-lang: en
 ---
 
 <amp-animation id="showAnim" layout="nodisplay">
@@ -75,8 +74,9 @@ lang: en
       layout="nodisplay">
     </amp-position-observer>
 
-    <amp-img id="parallaxImage" data-hero src="img/stylebarbershop_storefront.webp" width="433" height="577" layout="responsive">
-      <amp-img alt="Style barbershop store front side of building"
+    <amp-img id="parallaxImage" alt="Style barber shop store front side of building" data-hero src="img/stylebarbershop_storefront.webp" width="433" height="577" layout="responsive">
+      <amp-img
+        alt="Style barber shop store front side of building"
         fallback
         width="433"
         height="577"
@@ -85,6 +85,8 @@ lang: en
     </amp-img>
   </section>
 
+  <h2>About us</h2>
+  
   <p>{{ 'description' | i18n }}</p>
 
   <h3>{{ 'business_hours' | i18n }}</h3>
@@ -111,13 +113,23 @@ lang: en
     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXbga9Mhr5IkRf578ybnCIP0&key=AIzaSyBTuZkM6bF1MfAswPQ1PMQqx0KE810yTtg">
   </amp-iframe>
 
+  <div>
+    <amp-facebook-like
+      width="90"
+      height="20"
+      layout="fixed"
+      data-layout="button_count"
+      data-href="https://www.facebook.com/Style-Barber-shop-100745305349311"
+    ></amp-facebook-like>
+  </div>
+
   <p [text]="'Thanks, ' + individual +'! You have successfully contacted us.'">
     Contact us
   </p>
-  <form method="post" action-xhr="/"  on="submit-success: AMP.setState({ 'individual': event.response.name })" target="_blank">
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="tel" name="number" placeholder="Phone Number" required />
-    <input type="text" name="message" placeholder="How can we help you?" />
+  <form method="post" action-xhr="/"  on="submit-success: AMP.setState({ 'individual': event.response.value1 })" target="_blank">
+    <input id="name" type="text" aria-labelledby="name_label" name="value1" placeholder="Name" required />
+    <input type="tel" name="value2" placeholder="Phone Number" required />
+    <input type="text" name="value3" placeholder="How can we help you?" />
     <input type="submit" value="Contact Us" />
   </form>
 </section>
@@ -125,6 +137,7 @@ lang: en
   <button id="scrollToTopButton"
     on="tap:top.scrollTo(duration=200)"
     class="scrollToTop">
+      <span class="visually-hidden">Scroll to top</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.224 44.224"><path d="M22.112 44.224a3 3 0 003-3v-25.66c0-2.761 1.541-3.376 3.443-1.374l7.045 7.419a3.127 3.127 0 002.274.976 3.134 3.134 0 002.273-5.295L24.653.977A3.13 3.13 0 0022.406 0a3.161 3.161 0 00-2.261.938L4.114 17.254a3.135 3.135 0 104.47 4.394l7.024-7.148c1.935-1.97 3.504-1.328 3.504 1.433v25.291a3 3 0 003 3z" fill="#fff"/></svg>
   </button>
 </div>

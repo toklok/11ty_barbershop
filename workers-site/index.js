@@ -15,7 +15,7 @@ const DEBUG = false;
 async function handlePostRequest(request) {
   let reqBody = await readRequestBody(request);
 
-  let myHeaders = new Headers();
+  let myHeaders = new Headers({'content-type': 'application/json'});
 
   let requestOptions = {
     method: 'POST',
@@ -104,7 +104,7 @@ async function handleEvent(event) {
       };
     }
     if (url.pathname === '/') {
-      return Response.redirect(`${url}/en-US/`, 301)
+      return Response.redirect(`${url}/en-US/`, 302)
     }
     if (url.pathname.endsWith('.html')) {
       options.cacheControl = {

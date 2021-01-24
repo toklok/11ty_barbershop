@@ -3,11 +3,12 @@ const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const i18n = require('eleventy-plugin-i18n');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("src/img/barber-pole.png");
 
   eleventyConfig.addPlugin(i18n, {
     translations: {
       description: {
-        'en-US': 'Dave has been cutting hair for a long time since he was young kid and professionally since 2001.',
+        'en-US': 'Dave was inspired at a young age to be a Barber, by his uncle from the Dominican Republic. Dave has been cutting hair professionally since 2001, but has been cutting hair since an early age.',
         'en-ES': 'Dave se ha estado cortando el pelo durante mucho tiempo desde que era un niño y profesionalmente desde 2001.'
       },
       business_hours: {

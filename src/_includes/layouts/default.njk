@@ -4,9 +4,42 @@
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width">
   <link rel="canonical" href="{{ siteData.canonical }}" />
-  <link rel="icon" type="image/png" href="img/barber-pole.png" sizes="16x16">
-  <meta name="description"
-    content="{{ siteData.meta_description }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/barber-pole.png">
+  <meta name="description" content="{{ siteData.meta_description }}">
+
+  <meta property="og:title" content="Style Barber Shop">
+  <meta property="og:description" content="Barber shop near me 697 Wood Ave, Woonsocket, Rhode Island 02895. | Style Barber shop">
+  <meta property="og:image" content="https://stylebarbershop.info/img/34b95101-470.webp">
+  <meta property="og:url" content="https://stylebarbershop.info/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Woonsocket",
+      "addressRegion": "RI",
+      "postalCode": "02895",
+      "streetAddress": "697 Wood Ave"
+    },
+    "image": "https://stylebarbershop.info/img/34b95101-470.webp",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "20"
+    },
+    "name": "Style Barber shop",
+    "openingHours": [
+      "Tu-Fr 09:00-19:00",
+      "Sa 09:00-17:00"
+    ],
+    "priceRange": "$",
+    "telephone": "(401) 744-6280",
+    "url": "https://stylebarbershop.info/"
+  }
+  </script>
+  
   <style amp-custom>
     :root {
       --brand-hue: 210;
@@ -264,6 +297,15 @@
       opacity: 0;
       visibility: hidden;
     }
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
     .spacer {
       width: 100vw;
       max-width: 700px;
@@ -301,13 +343,34 @@
   <main>
     {{ content | safe}}
   </main>
-  <amp-analytics type="googleanalytics">
+
+  <amp-analytics type="facebookpixel" id="facebook-pixel">
+    <script type="application/json">
+    {
+      "vars": {
+        "pixelId": "1145155615905040"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+  </amp-analytics>
+
+  <amp-analytics type="googleanalytics" id="googleanalytics">
     <script type="application/json">
   {
     "vars": {
       "account": "UA-53518718-4"
     },
     "triggers": {
+      "default pageview": {
+        "on": "visible",
+        "request": "pageview"
+      },
       "trackPageview": {
         "on": "visible",
         "request": "pageview"
