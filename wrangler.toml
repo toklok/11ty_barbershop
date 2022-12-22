@@ -5,6 +5,8 @@ workers_dev = false
 route = "stylebarbershop.info/*"
 zone_id = "a764a2d404ec87a0374fde5122e8ccb1"
 
+compatibility_date = "2022-12-19"
+
 [site]
 bucket = "./_site"
 entry-point = "workers-site"

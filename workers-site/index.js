@@ -95,16 +95,13 @@ async function handleEvent(event) {
    * by configuring the function `mapRequestToAsset`
    */
   options.mapRequestToAsset = handlePrefix(/^\/docs/);
-  console.log(url.pathname);
+  // console.log(url.pathname);
   try {
     if (DEBUG) {
       // customize caching
       options.cacheControl = {
         bypassCache: true,
       };
-    }
-    if (url.pathname === '/') {
-      return Response.redirect(`${url}/en-US/`, 302)
     }
     if (url.pathname.endsWith('.html')) {
       options.cacheControl = {
@@ -121,7 +118,7 @@ async function handleEvent(event) {
       };
     }
     const extension = url.pathname.split('.').pop();
-    let immutableFiles = ['js', 'css', 'webp', 'png', 'jpg', 'gif'];
+    let immutableFiles = ['js', 'avif', 'css', 'webp', 'png', 'jpg', 'gif'];
     if (immutableFiles.includes(extension)) {
       options.cacheControl = {
         edgeTTL: 31536000,
