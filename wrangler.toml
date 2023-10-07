@@ -1,12 +1,11 @@
+main = "workers-site/index.js"
+
 name = "11ty_barbershop"
-type = "webpack"
 account_id = "889c69c3a2ed27db8cbfdc65709ba4dd"
 workers_dev = false
 route = "stylebarbershop.info/*"
-zone_id = "a764a2d404ec87a0374fde5122e8ccb1"
 
-compatibility_date = "2022-12-19"
+compatibility_date = "2023-10-04"
 
 [site]
 bucket = "./_site"
-entry-point = "workers-site"

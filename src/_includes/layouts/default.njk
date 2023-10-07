@@ -26,14 +26,13 @@
     "image": "https://stylebarbershop.info/img/34b95101-470.webp",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.6",
-      "reviewCount": "38"
+      "ratingValue": "4.5",
+      "reviewCount": "53"
     },
     "name": "Style Barber shop",
     "openingHours": [
-      "Tu-Fr 09:00-20:00",
-      "Sa 09:00-20:00",
-      "Su 09:00-20:00"
+      "Tu-Sa 09:00-19:00",
+      "Su 09:00-17:00"
     ],
     "priceRange": "$",
     "telephone": "(401) 744-6280",
@@ -344,38 +343,5 @@
   <main>
     {{ content | safe}}
   </main>
-
-  <amp-analytics type="googleanalytics" id="googleanalytics">
-    <script type="application/json">
-  {
-    "vars": {
-      "account": "UA-53518718-4"
-    },
-    "triggers": {
-      "default pageview": {
-        "on": "visible",
-        "request": "pageview"
-      },
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
-      },
-      "scrollPings": {
-        "on": "scroll",
-        "scrollSpec": {
-          "verticalBoundaries": [25, 50, 90],
-          "horizontalBoundaries": [90]
-        },
-        "request": "event",
-        "vars": {
-          "eventCategory": "AMP Scroll Depth",
-          "eventAction": "Scrolled",
-          "eventLabel": "Scrolled to ${verticalScrollBoundary}%"
-        }
-      }
-    }
-  }
-  </script>
-  </amp-analytics>
 </body>
 </html>
